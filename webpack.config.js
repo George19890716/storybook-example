@@ -14,7 +14,7 @@ module.exports = {
     filename: 'js/[name].[contenthash:8].js',
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    // contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 8083,
   },
@@ -40,8 +40,8 @@ module.exports = {
       },
     }),
     new CopyPlugin([
-      { from: 'public/images', to: 'images' },
-      { from: 'public/favicon.ico', to: 'favicon.ico' }
+      { from: 'images', to: 'images' },
+      { from: 'src/favicon.ico', to: 'favicon.ico' }
     ]),
   ],
   module: {
@@ -80,7 +80,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              publicPath: 'assets',
+              publicPath: 'images',
               name: '[name].[ext]',
               limit: 200000,
             },
@@ -93,7 +93,7 @@ module.exports = {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),
             options: {
-              publicPath: 'assets',
+              publicPath: 'images',
               name: '[name].[ext]',
               limit: 200000,
             },
