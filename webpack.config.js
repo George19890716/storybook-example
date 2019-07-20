@@ -4,19 +4,20 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const safePostCssParser = require('postcss-safe-parser');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash:8].js',
+    filename: 'js/[name].[hash:8].js',
   },
   devServer: {
     // contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 8083,
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -25,13 +26,13 @@ module.exports = {
       filename: './index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].chunk.css',
+      filename: 'css/[name].[hash:8].css',
+      chunkFilename: 'css/[name].[hash:8].chunk.css',
     }),
     new OptimizeCSSAssetsPlugin({
       cssProcessorOptions: {
         parser: safePostCssParser,
-        map: shouldUseSourceMap
+        map: process.env.GENERATE_SOURCEMAP !== 'false'
           ? {
               inline: false,
               annotation: true,
@@ -49,9 +50,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ],
       },
       {
         test: /\.html$/,
@@ -82,7 +85,7 @@ module.exports = {
             options: {
               publicPath: 'images',
               name: '[name].[ext]',
-              limit: 200000,
+              limit: 20000,
             },
           },
         ],
@@ -95,7 +98,7 @@ module.exports = {
             options: {
               publicPath: 'images',
               name: '[name].[ext]',
-              limit: 200000,
+              limit: 20000,
             },
           },
         ]
