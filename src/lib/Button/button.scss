@@ -1,0 +1,61 @@
+@import '../../styles/index.scss';
+
+.button {
+  &_normal {
+    width: 100%;
+    min-height: rem(36);
+    height: auto;
+    font-size: rem(13);
+    font-family: 'SCSans';   
+    color: $white;
+    background-color: $green;
+    border: $green-border;
+    box-shadow: $green-shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &_raduis {
+    border-radius: rem(3);
+  }
+
+  &_raduis-left {
+    border-radius: 0;
+    border-top-left-radius: rem(3);
+    border-bottom-left-radius: rem(3);
+  }
+
+  &_raduis-right {
+    border-radius: 0;
+    border-top-right-radius: rem(3);
+    border-bottom-right-radius: rem(3);
+  }
+
+  &_black {
+    background-color: $black;
+    border: $black-border;
+    box-shadow: $black-shadow;
+  }
+
+  &_disabled {
+    background-color: $disabled;
+    border: $disabled-border;
+    box-shadow: $disabled-shadow;
+
+    &:hover {
+      color: $white;
+      background-color: $disabled;
+    }
+  }
+}

@@ -21,12 +21,9 @@ export default class App extends Component {
     const { value } = this.state;
     return (
       <div>
-        <div>{value}</div>
-        {/* <Input
-          type='text'
-          value={value}
-          onChange={value => this.onChange(value)}
-        /> */}
+        {/* <div>{value}</div> */}
+          <img src='./images/1.jpg' className='img' alt='' />
+          <img src='./images/2.jpg' className='img' alt='' />
       </div>
       // <div className='box'>
       //   <img src='./images/1.jpg' className='img' alt='' />
