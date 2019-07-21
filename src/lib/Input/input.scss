@@ -1,0 +1,93 @@
+// @import '../../styles/index.scss';
+
+// .input {
+//   &_container {
+//     width: 100%;
+//     min-height: rem(36);
+//     position: relative;
+//     box-sizing: border-box;
+//   }
+
+//   &_title {
+//     height: rem(30);
+//     line-height: rem(30);
+//     padding-left: rem(6);
+//     font-family: 'SCSans';
+//     font-size: rem(13);
+//     letter-spacing: normal;
+//     color: #757575;
+//     display: block;
+//   }
+
+//   &_normal {
+//     width: 100%;
+//     height: rem(36);
+//     line-height: rem(36);
+//     text-indent: rem(10);
+//     font-size: rem(15);
+//     font-family: 'ScSans';
+//     outline: none;
+//     border-radius: rem(4);
+//     border: $input-border;
+//     box-shadow: $shadow-shadow;
+//     -moz-box-shadow: $shadow-shadow;
+//     -webkit-box-shadow: $shadow-shadow; 
+//   }
+
+//   &_error {
+//     border: $red-border;
+//     box-shadow: $red-shadow;
+//     -moz-box-shadow: $red-shadow;
+//     -webkit-box-shadow: $red-shadow; 
+//   }
+
+//   &_error-msg {
+//     color: $red;
+//     font-size: rem(12);
+//     font-family: 'ScSans';
+//     padding-left: rem(15);
+//   }
+// }
+
+// .sc-radio {
+//   &_container {
+//     width: 100%;
+//     height: rem(30);
+//     line-height: rem(30);
+//     padding: 0 rem(15);
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   &_radio {
+//     height: rem(20);
+//     margin: 0 rem(5);
+//   }
+// }
+
+// .search-input {
+//   &_container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+
+//   &_content {
+//     width: 100%;
+//     box-sizing: border-box;
+//     padding: {
+//       left: rem(30);
+//       right: rem(30);
+//     }
+//   }
+
+//   &_search {
+//     position: absolute;
+//     left: rem(10);
+//   }
+
+//   &_cross {
+//     position: absolute;
+//     right: rem(10);
+//   }
+// }

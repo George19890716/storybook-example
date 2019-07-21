@@ -1,0 +1,26 @@
+@import 'function';
+@import 'color';
+
+$container-width: rem(1200);
+
+$black-border: rem(1) solid $black;
+$green-border: rem(1) solid $green;
+$red-border: rem(1) solid $red;
+$shadow-border: rem(1) solid $shadow-color;
+$input-border: rem(1) solid $border-color;
+$disabled-border: rem(1) solid $disabled;
+
+$black-shadow: 0 0 rem(3) $black;
+$green-shadow: 0 0 rem(3) $green;
+$red-shadow: 0 0 rem(3) $red;
+$shadow-shadow: 0 0 rem(3) $shadow-color;
+$wtfx-shadow: 0 0 rem(29) 0 rgba(0, 0, 0, 0.3);
+$disabled-shadow: 0 0 rem(3) $disabled;
+
+$bord-light: 300;
+$bord-normal: 400;
+$bord-bord: 700;
+$bord-border: 900;
+$z-header: 10;
+$z-select: 50;
+$z-modal: 900;

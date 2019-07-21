@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './input.css';
+import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
+import './input.scss';
 
 export default class Input extends Component {
   static propTypes = {
     type: PropTypes.oneOf(['text', 'password']),
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
-  }
+    title: PropTypes.node,
+    placeholder: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    required: PropTypes.bool,
+    error: PropTypes.string
+  } 
 
   static defaultProps = {
     type: 'text'
@@ -23,15 +29,38 @@ export default class Input extends Component {
   }
 
   render() {
-    const { type, value } = this.props;
+    const { type, title, placeholder, value, required, error } = this.props;
     return (
-      // <div className='input'>
-        <input 
-          type={type}
-          value={value}
-          onChange={this.handleChange}
-        />
-      // </div>
+      <div className='input_container'>
+        {
+          !!title && (
+            <label className='input_title'>
+              {title}
+            </label>
+          )
+        }
+        <FormattedMessage id={placeholder}>
+          {
+            msg => (<input
+                      type={type}
+                      className={classNames('input_normal', {'input_error': !!error} )}
+                      placeholder={msg}
+                      value={value}
+                      onChange={this.handleChange}
+                      required={required}
+                    />)
+          }
+        </FormattedMessage>
+        {
+          !!error && (
+            <div className='input_error-msg'>
+              * <FormattedMessage
+                id={error}
+              />
+            </div>
+          )
+        }
+      </div>
     );
   }
 }

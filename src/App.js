@@ -22,11 +22,11 @@ export default class App extends Component {
     return (
       <div>
         <div>{value}</div>
-        <Input
+        {/* <Input
           type='text'
           value={value}
           onChange={value => this.onChange(value)}
-        />
+        /> */}
       </div>
       // <div className='box'>
       //   <img src='./images/1.jpg' className='img' alt='' />

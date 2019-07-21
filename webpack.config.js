@@ -105,7 +105,8 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        loaders: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        include: path.resolve(__dirname, '../'),
       }
     ]
   }
